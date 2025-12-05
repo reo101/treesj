@@ -112,7 +112,7 @@ function M._format(mode, override)
     return
   end
 
-  if mode == JOIN and sr == er then
+  if mode == JOIN and sr == er and not (p and p.allow_join_on_single_line) then
     notify.info(msg.node_is_already_joined)
     return
   elseif mode == SPLIT and sr ~= er then

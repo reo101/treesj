@@ -9,13 +9,14 @@ end
 
 function M._test_format(v, treesj)
   local desc = v.desc:format(v.lang)
+  local preset = v.preset
 
   it(desc, function()
     local bufnf = open_ang_get_buf(v.path)
     local expected =
       a.nvim_buf_get_lines(bufnf, v.expected[1], v.expected[2], true)
     a.nvim_win_set_cursor(0, v.cursor)
-    treesj[v.mode]()
+    treesj[v.mode](preset)
     local result = a.nvim_buf_get_lines(bufnf, v.result[1], v.result[2], true)
     a.nvim_buf_delete(bufnf, { force = true })
     assert.are.same(expected, result)

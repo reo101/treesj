@@ -67,4 +67,12 @@
       b = 2;
       c = "c";
     };
+
+  # RESULT OF JOIN (node "binding", attrpath with single nested binding)
+  nestedJoin =
+    { a.b.c = 5; };
+
+  # RESULT OF SPLIT (node "binding", attrpath with single nested binding)
+  nestedSplit =
+    { a = { b = { c = 5; }; }; };
 }

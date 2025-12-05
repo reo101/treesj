@@ -49,6 +49,16 @@ local data_for_split = {
     expected = { 60, 69 },
     result = { 56, 65 },
   },
+  {
+    path = PATH,
+    mode = 'split',
+    lang = LANG,
+    desc = 'lang "%s", node "binding" attrpath to nested attrset (recursive)',
+    cursor = { 73, 9 },
+    expected = { 76, 77 },
+    result = { 72, 73 },
+    preset = { split = { recursive = true } },
+  },
 }
 
 local treesj = require('treesj')

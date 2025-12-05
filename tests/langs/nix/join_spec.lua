@@ -49,6 +49,16 @@ local data_for_join = {
     expected = { 56, 57 },
     result = { 60, 61 },
   },
+  {
+    path = PATH,
+    mode = 'join',
+    lang = LANG,
+    desc = 'lang "%s", node "binding" attrpath from nested attrset (recursive)',
+    cursor = { 77, 11 },
+    expected = { 72, 73 },
+    result = { 76, 77 },
+    preset = { join = { recursive = true } },
+  },
 }
 
 local treesj = require('treesj')
